@@ -1,0 +1,29 @@
+
+<div class="example-container" >
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Employee</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav >
+      <mat-nav-list>
+        <span *ngFor="let item of menu">
+          <mat-list-item [routerLink]="item.route">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              {{item.displayName}}
+            </div>
+          </mat-list-item>
+        </span>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content with="100%">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>
+
