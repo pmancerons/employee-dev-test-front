@@ -22,7 +22,7 @@ export class ListEmployeesComponent implements OnInit {
 
   search(){
     console.log(this.id);
-    if(this.id == undefined || this.id == 0){        
+    if(this.id == undefined || this.id == null){        
       this.service.getAllEmployees().subscribe(data => {
         console.log(data.employees); 
         this.employees = data.employees;
